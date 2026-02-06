@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Someone Special 🌸</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Romantic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      background:linear-gradient(#ffe6f0,#fff);
+      font-family:'Pacifico',cursive;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    h1{
+      color:#ff4d88;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:20px;
+      opacity:0.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hieeee Khushi🫶🏻</h1>
+<p>I made something just for you…</p>
+
+<a href="gallery.html" class="btn">Start</a>
+
+<!-- Global effects (hearts + petals) -->
+<script src="script.js"></script>
+
+<!-- Sparkle click effect -->
+<script>
+document.addEventListener("click", e=>{
+  for(let i=0;i<10;i++){
+    let s=document.createElement("div");
+    s.innerHTML="✨";
+    s.style.position="fixed";
+    s.style.left=e.clientX+"px";
+    s.style.top=e.clientY+"px";
+    s.style.pointerEvents="none";
+    s.style.fontSize="18px";
+    s.style.animation="spark 1s forwards";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),1000);
+  }
+};
+
+const st=document.createElement('style');
+st.innerHTML=`@keyframes spark{
+  to{transform:translateY(-35px);opacity:0;}
+}`;
+document.head.appendChild(st);
+</script>
+
+</body>
+</html>

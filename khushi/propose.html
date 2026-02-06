@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One Last Question 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      font-family:'Segoe UI',sans-serif;
+      background: radial-gradient(circle at top, #ffe6f2, #ffb6d9);
+      text-align:center;
+    }
+
+    h1{
+      color:#ff2e88;
+      font-size:42px;
+      margin-bottom:10px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .proposalLine{
+      font-size:22px;
+      max-width:700px;
+      margin:10px auto 30px auto;
+      color:#444;
+      padding:0 20px;
+    }
+
+    @keyframes glow{
+      from{ text-shadow:0 0 10px #ff99cc; }
+      to{ text-shadow:0 0 25px #ff1493; }
+    }
+
+    .btn{
+      padding:14px 30px;
+      font-size:20px;
+      border:none;
+      border-radius:30px;
+      margin:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    #yes{
+      background:#ff4d88;
+      color:white;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    #no{
+      background:white;
+      color:#ff4d88;
+      position:absolute;
+    }
+
+    #videoContainer{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:black;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      z-index:100;
+    }
+
+    video{
+      width:80%;
+      border-radius:20px;
+      box-shadow:0 0 40px pink;
+    }
+
+    #loveText{
+      color:white;
+      font-size:32px;
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Will You Be My Life Partner? 💘</h1>
+
+<p class="proposalLine">
+Khushi, You are not just someone I love, you are someone I choose, every single day. 💖
+</p>
+
+<button id="yes" class="btn">Yes 💖</button>
+<button id="no" class="btn">No 🥀</button>
+
+<!-- Hidden video screen -->
+<div id="videoContainer">
+  <video id="loveVideo" src="video.mp4"></video>
+  <div id="loveText">You just made me the happiest person alive ❤️</div>
+</div>
+
+<script>
+// No button runs away
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.top = Math.random()*80 + "%";
+  noBtn.style.left = Math.random()*80 + "%";
+});
+
+// Yes button action
+document.getElementById("yes").addEventListener("click", () => {
+
+  // Confetti burst
+  for(let i=0;i<80;i++){
+    let conf = document.createElement("div");
+    conf.innerHTML="💖";
+    conf.style.position="fixed";
+    conf.style.left=Math.random()*100+"vw";
+    conf.style.top="-20px";
+    conf.style.fontSize="24px";
+    conf.style.animation="fall 3s linear forwards";
+    document.body.appendChild(conf);
+  }
+
+  // Show video after small delay
+  setTimeout(()=>{
+    document.getElementById("videoContainer").style.display="flex";
+    document.getElementById("loveVideo").play();
+  },1500);
+});
+
+// Falling animation
+const style=document.createElement('style');
+style.innerHTML=`
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0;}
+}`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>

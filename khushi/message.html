@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      margin:0;
+      font-family:'Segoe UI',sans-serif;
+      background:linear-gradient(#ffe6f0,#fff);
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    #typeText{
+      font-size:20px;
+      white-space:pre-line;
+      max-width:800px;
+      margin:0 auto 40px auto;
+      min-height:200px;
+    }
+
+    .nextBtn{
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>For You 💗</h1>
+
+<p id="typeText"></p>
+
+<a href="propose.html" class="btn nextBtn">Next ➜</a>
+
+<script>
+const text = `Khushi, I never thought that I would ever be in a relationship again, nor did I have any trust left in love. 
+
+But the day I met you and we started talking, within just 2–3 days I understood you, and that’s when I felt that you are very special. I had already fallen in love with you by then.
+
+Seeing you made me feel that even today, there are girls who truly love and stay loyal. You are so perfect and soft-hearted. I really love you, Khushi, a lot. I want you forever in my life.
+
+I promise to always respect you, support you, stand by you in every situation, and never let you feel alone. No matter what life brings, I want to face it with you. 
+
+You are not just someone I love, you are someone I truly value and cherish. 💖`;
+
+let i = 0;
+const speed = 28;
+
+function typeWriter(){
+  if(i < text.length){
+    document.getElementById("typeText").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.onload = typeWriter;
+</script>
+
+<!-- Global hearts + petals -->
+<script src="script.js"></script>
+
+</body>
+</html>
